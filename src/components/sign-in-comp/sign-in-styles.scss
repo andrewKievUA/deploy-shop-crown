@@ -1,0 +1,27 @@
+.sign-in2{
+  text-align:center;
+  min-width: 280px;
+  width: 40%;
+
+  flex-direction: column;
+  margin-left: 50px;
+  padding-bottom: 20px;
+  border: 1px solid black
+
+
+}
+.labels{
+  font-size: 15px;
+  margin: 25px 1px 0
+}
+
+.inputs{
+  font-size:  15px;
+  margin: -10px 1px 0
+}
+
+.buttons {
+
+  flex-wrap: wrap;
+justify-content: center;
+}
