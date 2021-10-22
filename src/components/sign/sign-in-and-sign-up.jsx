@@ -1,7 +1,8 @@
 import React from "react"
 import "./sign-in-styles.scss"
 import SignInComp from "../sign-in-comp/sign-in-comp";
-import FormInput from "../form-input/form-input";
+import SignUp from "../sign-up/sign-up";
+
 
 
 const SignIn = ()=>{
@@ -11,8 +12,8 @@ const SignIn = ()=>{
 
 
             <SignInComp/>
-            {/*{" "}*/}
-            {/*<FormInput/>*/}
+
+            <SignUp/>
         </div>
     )
 
