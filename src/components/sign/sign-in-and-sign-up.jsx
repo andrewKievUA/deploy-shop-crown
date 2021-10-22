@@ -4,11 +4,10 @@ import SignInComp from "../sign-in-comp/sign-in-comp";
 import SignUp from "../sign-up/sign-up";
 
 
-
-const SignIn = ()=>{
+const SignInAndSignUp = ()=>{
 
     return(
-        <div className="sign-in">
+        <div className="sign-in-and-sign-up">
 
 
             <SignInComp/>
@@ -19,6 +18,6 @@ const SignIn = ()=>{
 
 }
 
-export default SignIn
+export default SignInAndSignUp
 
 
