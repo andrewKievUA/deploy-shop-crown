@@ -13,7 +13,7 @@ firebase.initializeApp({
 
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-    console.log(userAuth)
+   /// console.log(userAuth)
 
     if (!userAuth) return
     const userRef = firestore.doc(`user/${userAuth.uid}`)

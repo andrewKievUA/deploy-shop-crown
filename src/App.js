@@ -5,7 +5,7 @@ import SignInAndSignUp from "./components/sign/sign-in-and-sign-up";
 import {Route, Switch,Redirect} from "react-router-dom";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
-import {auth, createUserProfileDocument} from "./components/firebase/firebase.utils";
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {connect} from "react-redux";
 import {setCurrentUser} from "./redux/user/user.actions";
 

@@ -11,15 +11,13 @@ class ShopPage extends Component {
     }
     render() {
         const collection = [...this.state.arr]
-        console.log(collection[3].id)
+       // console.log(collection[3].id)
 
 
         //console.log({collection},"SHop Page")
         return (
             <div className="shop-page">
                 {collection.map(({id, ...otherColletionProps}) =>(
-
-
                     <CollectionPreview key={id} {...otherColletionProps}/>
                 ))}
             </div>
