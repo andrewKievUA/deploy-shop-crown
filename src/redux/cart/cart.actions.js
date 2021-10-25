@@ -1,6 +1,7 @@
-const  CartActionTypes ={
-    TOGGLE_CART_HIDDEN: "TOGGLE_CART_HIDDEN"
-}
+import {TOGGLE_CART_HIDDEN} from "./cart.types"
 
 
-export default CartActionTypes
+export const toggleCartHidden =()=>({
+    type: TOGGLE_CART_HIDDEN
+})
+

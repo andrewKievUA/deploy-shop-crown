@@ -7,15 +7,14 @@ import {connect} from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown";
 
-let z = "asdf"
 
-const Header = ({currentUser}) => {
-    if (currentUser !== null){z=currentUser.displayName}
-    console.log(currentUser)
+
+const Header = ({currentUser,hidden}) => {
+
     return (
         <>
             <div className="header">
-                {z}
+              
                 <Link to='/' className='logo-container'>
                     <Logo className="logo"></Logo>
                 </Link>
@@ -33,14 +32,19 @@ const Header = ({currentUser}) => {
                     }
                     <CartIcon/>
                 </div>
-                <CartDropdown/>
+                {hidden?
+                null:
+                    <CartDropdown/>
+                }
+
             </div>
         </>
     )
 }
 
-const mapStateToProps= state=>({
-    currentUser: state.user.currentUser
+const mapStateToProps= ({user:{currentUser},cartReducer:{hidden}})=>({
+    currentUser,
+    hidden
 
 })
 
