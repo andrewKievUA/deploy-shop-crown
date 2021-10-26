@@ -7,7 +7,6 @@ import {toggleCartHidden } from "../../redux/cart/cart.actions";
 
 
 
-
 const CartDropdown = ({cartItems,toggleCartHiddenAA}) => {
 
     console.log(toggleCartHiddenAA, "toglecard hidddden")
@@ -18,8 +17,8 @@ const CartDropdown = ({cartItems,toggleCartHiddenAA}) => {
             {cartItems.map(cartItem=>
                 <CartItem key={cartItem.id} item={cartItem}/>)}
         </div>
-        <CustomButton onClick={toggleCartHiddenAA}> CLOSE</CustomButton>
-        <CustomButton> GO TO CHECKOUT</CustomButton>
+        <CustomButton inverted onClick={toggleCartHiddenAA}> CLOSE</CustomButton>
+        <CustomButton > GO TO CHECKOUT</CustomButton>
     </div>)
 }
 const mapStateToProps=({cartReducer:{cartItems}})=>({
