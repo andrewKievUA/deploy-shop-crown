@@ -46,7 +46,6 @@ const Header = ({currentUser,hidden}) => {
 const mapStateToProps= ({user:{currentUser},cartReducer:{hidden}})=>({
     currentUser,
     hidden
-
 })
 
 const mapDispatchToProps= ()=>({})

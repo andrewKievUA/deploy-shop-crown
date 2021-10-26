@@ -3,19 +3,33 @@ import "./cart-dropdown.scss"
 import CustomButton from "../custom-button/custom-button";
 import {connect} from "react-redux";
 import CartItem from "../cart-item/cart-item.component";
+import {toggleCartHidden } from "../../redux/cart/cart.actions";
 
-const CartDropdown = ({cartItems}) => {
+
+
+
+const CartDropdown = ({cartItems,toggleCartHiddenAA}) => {
+
+    console.log(toggleCartHiddenAA, "toglecard hidddden")
     console.log(cartItems,"cartItems")
     return(
     <div className="cart-dropdown">
         <div className="cart-items">
             {cartItems.map(cartItem=>
-                <CartItem key={cartItem.id} item={CartItem}/>)}
+                <CartItem key={cartItem.id} item={cartItem}/>)}
         </div>
+        <CustomButton onClick={toggleCartHiddenAA}> CLOSE</CustomButton>
         <CustomButton> GO TO CHECKOUT</CustomButton>
     </div>)
 }
 const mapStateToProps=({cartReducer:{cartItems}})=>({
 cartItems:cartItems
 })
-export default connect(mapStateToProps)(CartDropdown)
+
+
+const mapDispatchToProps = dispatch=>({
+    toggleCartHiddenAA:()=>dispatch(toggleCartHidden())
+})
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(CartDropdown)
