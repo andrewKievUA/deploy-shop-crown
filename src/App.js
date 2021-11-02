@@ -38,23 +38,19 @@ class App extends Component {
     }
 
     render() {
-        let fff = (<div> "null" </div>)
+        let userName = (<div className="displayName">  Please login </div>)
         if (this.props.currentUser){
             if (this.props.currentUser.currentUser){
-                fff = (<div> {this.props.currentUser.currentUser.displayName} </div>)
+                userName = (<div className="displayName"> {this.props.currentUser.currentUser.displayName} </div>)
             }
 
         }
 
         return (<>
-                {fff}
-                {this.props.currentUser?
-                this.props.currentUser.currentUser?
-                this.props.currentUser.currentUser.displayName:
-                "null":
-                "null"
-            }
+
+
                 <Header/>
+                {userName}
                 <Switch>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/shop" component={ShopPage}/>

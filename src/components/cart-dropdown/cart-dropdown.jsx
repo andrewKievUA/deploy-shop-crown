@@ -13,8 +13,10 @@ const CartDropdown = ({cartItems,toggleCartHiddenAA}) => {
     return(
     <div className="cart-dropdown">
         <div className="cart-items">
-            {cartItems.map(cartItem=>
-                <CartItem key={cartItem.id} item={cartItem}/>)}
+            {cartItems.length ?  
+                cartItems.map(cartItem=><CartItem key={cartItem.id} item={cartItem}/>)
+                
+            : <div className="cardEmptyText"> your card is empty </div>}
         </div>
         <CustomButton inverted onClick={toggleCartHiddenAA}> CLOSE</CustomButton>
         <CustomButton > GO TO CHECKOUT</CustomButton>
