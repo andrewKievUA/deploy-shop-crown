@@ -6,7 +6,7 @@ import {selectCartItems,selectCartTotal}from "../../redux/cart/cart.selectors"
 import CheckoutItem from "../../components/checkout-item/checkout-item.component"
 
  const  checkoutPage = ({cartItems,total}) => {
-     console.log(cartItems,"cartItems");
+     //console.log(cartItems,"cartItems");
      
 
     return (

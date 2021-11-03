@@ -13,3 +13,15 @@ export const addItemToCart= (cartItems,cartItemToAdd)=>{
     }
     return [...cartItems,{...cartItemToAdd,quantity:1}]
 }
+
+
+
+
+export const removeItemFromCart= (cartItems,cartItemRemove)=>{
+    // console.log(cartItems,'cartItems')
+     const existingCartItem=cartItems.filter(
+          cartItem=>   cartItem.name!==cartItemRemove
+     )
+  
+     return existingCartItem
+ }
