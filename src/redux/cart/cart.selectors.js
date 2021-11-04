@@ -1,7 +1,7 @@
 import {createSelector} from "reselect"
 
 const selectCart = state=>state.cartReducer
-const selectUser = state=>state.user
+
 export const selectCartItems=createSelector(
        [selectCart],(cart)=>{
       return  cart.cartItems

@@ -1,5 +1,6 @@
-import {TOGGLE_CART_HIDDEN,ADD_ITEM,REMOVE_ITEM_FROM_CART} from "./cart.types";
-import {addItemToCart,removeItemFromCart} from "./cart.utils";
+import {TOGGLE_CART_HIDDEN,ADD_ITEM,REMOVE_ITEM_FROM_CART,
+        INCREASING_QUANTITY,DECREASING_QUANTITY} from "./cart.types";
+import {addItemToCart,removeItemFromCart,increasingQuantityReducer,decreasingQuantityReducer} from "./cart.utils";
 
 
 const INITIAL_STATE = {
@@ -24,6 +25,17 @@ const cartReducer = (state = INITIAL_STATE,action)=>{
                 return {
                     ...state,
                     cartItems: removeItemFromCart(state.cartItems,action.payload)
+                }
+            case INCREASING_QUANTITY:
+                return {
+                     ...state,
+                    cartItems: increasingQuantityReducer(state.cartItems,action.payload)
+                }
+
+            case DECREASING_QUANTITY:
+                return {
+                    ...state,
+                    cartItems: decreasingQuantityReducer(state.cartItems,action.payload)
                 }
 
         default : return  state

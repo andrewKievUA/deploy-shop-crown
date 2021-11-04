@@ -1,9 +1,7 @@
 export const addItemToCart= (cartItems,cartItemToAdd)=>{
-   // console.log(cartItems,'cartItems')
     const existingCartItem=cartItems.find(
          cartItem=>cartItem.id===cartItemToAdd.id
     )
-   // console.log(existingCartItem,'existingCartItem')
     if (existingCartItem){
         return cartItems.map(cartItem=>
         cartItem.id===cartItemToAdd.id
@@ -15,8 +13,6 @@ export const addItemToCart= (cartItems,cartItemToAdd)=>{
 }
 
 
-
-
 export const removeItemFromCart= (cartItems,cartItemRemove)=>{
     // console.log(cartItems,'cartItems')
      const existingCartItem=cartItems.filter(
@@ -25,3 +21,33 @@ export const removeItemFromCart= (cartItems,cartItemRemove)=>{
   
      return existingCartItem
  }
+
+
+ export const increasingQuantityReducer= (cartItems,cartItemToAdd)=>{
+     console.log(cartItems,cartItemToAdd);
+      const existingCartItem=cartItems.map(
+         cartItem=>{
+            if (cartItem.name===cartItemToAdd) 
+            return   {...cartItem,quantity:cartItem.quantity+1}
+            else {return cartItem}
+        }
+    )
+    return existingCartItem
+}
+
+export const decreasingQuantityReducer= (cartItems,cartItemToAdd)=>{
+    console.log(cartItems,cartItemToAdd);
+     let existingCartItem=cartItems.map(
+        cartItem=>{
+           if (cartItem.name===cartItemToAdd) {
+                return   {...cartItem,quantity:cartItem.quantity-1}
+            }
+           
+           else {return cartItem}
+       }
+   )
+
+   existingCartItem= existingCartItem.filter(cartItem=>cartItem.quantity!==0)
+   return existingCartItem
+}
+
