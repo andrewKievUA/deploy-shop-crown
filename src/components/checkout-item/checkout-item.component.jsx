@@ -13,10 +13,14 @@ import { removeItemFromCartAction,increasingQuantityCartAction,decreasingQuantit
             <span className="name">{name}</span>
 
 
-            <span  onClick={()=>dispatch(decreasingQuantityCartAction(name))}>-</span>
-            <span className="quantity">{quantity}</span>
-            <span onClick={()=>dispatch(increasingQuantityCartAction(name))}>+</span>
-
+            
+            <span className="quantity">
+                <span  onClick={()=>dispatch(decreasingQuantityCartAction(name))} className="change-quantity-button">&#9664;</span>
+                { }  {quantity}  { }
+                <span onClick={()=>dispatch(increasingQuantityCartAction(name))} className="change-quantity-button">&#9654;</span>
+                 
+            </span>
+            
             <span className="price">{price}</span>
             <span className="remove-button" onClick={()=>dispatch(removeItemFromCartAction(name))}> &#10060;</span>
 
