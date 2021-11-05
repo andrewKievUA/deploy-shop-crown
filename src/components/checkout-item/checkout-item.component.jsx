@@ -16,7 +16,7 @@ import { removeItemFromCartAction,increasingQuantityCartAction,decreasingQuantit
             
             <span className="quantity">
                 <span  onClick={()=>dispatch(decreasingQuantityCartAction(name))} className="change-quantity-button">&#9664;</span>
-                { }  {quantity}  { }
+             {quantity}
                 <span onClick={()=>dispatch(increasingQuantityCartAction(name))} className="change-quantity-button">&#9654;</span>
                  
             </span>

@@ -14,8 +14,7 @@ export const addItemToCart= (cartItems,cartItemToAdd)=>{
 
 
 export const removeItemFromCart= (cartItems,cartItemRemove)=>{
-    // console.log(cartItems,'cartItems')
-     const existingCartItem=cartItems.filter(
+         const existingCartItem=cartItems.filter(
           cartItem=>   cartItem.name!==cartItemRemove
      )
   
@@ -24,8 +23,7 @@ export const removeItemFromCart= (cartItems,cartItemRemove)=>{
 
 
  export const increasingQuantityReducer= (cartItems,cartItemToAdd)=>{
-     console.log(cartItems,cartItemToAdd);
-      const existingCartItem=cartItems.map(
+          const existingCartItem=cartItems.map(
          cartItem=>{
             if (cartItem.name===cartItemToAdd) 
             return   {...cartItem,quantity:cartItem.quantity+1}
