@@ -5,7 +5,7 @@ import SignInAndSignUp from "./components/sign/sign-in-and-sign-up";
 import {Route, Switch,Redirect} from "react-router-dom";
 
 import HomePage from "./pages/homepage/homepage.component";
-import ShopPage from "./pages/shop/shop.component";
+import ShopPage from "./pages/shop/shop.Page.jsx";
 import  checkoutPage  from './pages/checkout/checkout.component';
 
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
@@ -46,20 +46,13 @@ class App extends Component {
             if (this.props.currentUser.currentUser){
                 userName = (<div className="displayName"> {this.props.currentUser.currentUser.displayName} </div>)
             }
-
         }
-
-
- 
-
-
+        console.log(this)
         return (<>
-
-
                 <Header/>
                 {userName}
                 <Switch>
-                
+                    <Route path="shopping"/>
                     <Route exact path="/checkout" component={checkoutPage}/>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/shop" component={ShopPage}/>
