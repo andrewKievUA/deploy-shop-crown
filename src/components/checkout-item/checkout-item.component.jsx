@@ -22,7 +22,7 @@ import { removeItemFromCartAction,increasingQuantityCartAction,decreasingQuantit
             </span>
             
             <span className="price">{price}</span>
-            <span className="remove-button" onClick={()=>dispatch(removeItemFromCartAction(name))}> &#10060;</span>
+            <span  onClick={()=>dispatch(removeItemFromCartAction(name))} className="remove-button">&#9986;</span>
 
             
         </div>

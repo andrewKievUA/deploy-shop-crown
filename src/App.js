@@ -47,7 +47,7 @@ class App extends Component {
                 userName = (<div className="displayName"> {this.props.currentUser.currentUser.displayName} </div>)
             }
         }
-        console.log(this)
+
         return (<>
                 <Header/>
                 {userName}
