@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import {selectCartItems,selectCartTotal}from "../../redux/cart/cart.selectors"
 import CheckoutItem from "../../components/checkout-item/checkout-item.component"
+import StripeButton from "../../components/stripe-button/stripeButton";
+
+
 
  const  checkoutPage = ({cartItems,total}) => {
      //console.log(cartItems,"cartItems");
@@ -34,9 +37,11 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
           
             </div>
 
+
             {cartItems.length  ? cartItems.map((cartItem,index)=><CheckoutItem key={index} cartItem={cartItem} />):"Your card is empty"}
 
             <div className="total">Total {total} $</div>
+            <StripeButton price={total}/>
         </div>
     )
 }
