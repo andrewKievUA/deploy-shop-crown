@@ -1,6 +1,6 @@
 .collection-item {
   width: 24%;
-  min-width: 130px;
+  min-width: 165px;
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -9,13 +9,18 @@
   padding-bottom: 10px;
   overflow: hidden;
   position: relative;
+  //margin-bottom: 5px;
 
 
-  $medium: 900px;
-  @media screen and (min-width: $medium) {
+
+  @media screen and (min-width: 900px) {
     height: 450px;
   }
 
+  @media screen and (max-width: 400px) {
+    min-width: 140px;
+    height: 240px;
+  }
 
   .image {
     width: 100%;
