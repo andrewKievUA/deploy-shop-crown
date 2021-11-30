@@ -11,16 +11,12 @@ firebase.initializeApp({
     appId: "1:405630482850:web:f53d4aee606c0874255afb"
 })
 
-
 export const createUserProfileDocument = async (userAuth, additionalData) => {
    /// console.log(userAuth)
-
     if (!userAuth) return
     const userRef = firestore.doc(`user/${userAuth.uid}`)
     const snapshot = await userRef.get()
   //  console.log(snapshot, 'TINI')
-
-
     if (!snapshot.exists) {
         //console.log(userRef,"inside the firebase  !snapshot.exists")
         const {displayName, email} = userAuth
@@ -36,11 +32,27 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
             console.log("error creating user", error.message)
         }
         //console.log(userRef,"inside the firebase")
-
     }
     return userRef
-
 }
+
+export const convertCollectionsSnapshotToMap=(colletions)=>{
+    const transformedCollection = colletions.docs.map(doc=>{
+        const {title,items}=doc.data()
+        return {
+            routeName:encodeURI(title.toLowerCase()),
+            id:doc.id,
+            title,
+            items
+        }
+    })
+
+    return transformedCollection.reduce((acc,collection)=>{
+        acc[collection.title.toLowerCase()]=collection
+        return acc
+    })
+}
+
 
 
 export const auth = firebase.auth()
